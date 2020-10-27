@@ -1,6 +1,28 @@
 .palette{
   height: 100vh;
 }
+
 .palette-colors {
   height: 90%
+}
+
+.slider{
+  width: 340px;
+  margin: 0 10px;
+  display: inline-block;
+}
+
+.rc-slider-track{
+  background-color: transparent;
+}
+
+.rc-slider-rail{
+  height: 8px;
+}
+
+.rc-slider-handle{
+  background-color: teal;
+  outline: none;
+  border: none;
+  margin-top: -3px;
 }
