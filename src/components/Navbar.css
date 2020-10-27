@@ -1,0 +1,35 @@
+nav {
+  display: flex;
+  height: 5%;
+  align-items: center;
+
+}
+
+.logo a {
+  text-decoration: none;
+  color: black;
+}
+
+.logo{
+  background-color: rgb(218, 218, 218);
+  width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin-right: 2%;
+}
+
+.slider{
+  width: 340px;
+  margin: 0 10px;
+  display: inline-block;
+}
+
+.rc-slider-track{
+  background-color: transparent;
+}
+
+.rc-slider-rail{
+  height: 8px;
+}
