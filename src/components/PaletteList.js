@@ -1,20 +1,63 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
+import { withStyles } from '@material-ui/styles';
 import MiniPalette from './MiniPalette';
+import Palette from './Palette';
 
-export class PaletteList extends Component {
+const styles = {
+  root: {
+    backgroundColor: 'white smoke',
+    height: '100vh',
+    display: 'flex',
+    alignItems: 'flex-start',
+    justifyContent: 'center',
+  },
+  container: {
+    width: '50%',
+    display: 'flex',
+    alignItems: 'flex-start',
+    flexDirection: 'column',
+    flexWrap: 'wrap'
+  },
+  nav: {
+    display: 'flex',
+    widht: '100%',
+    justifyContent: 'space-between',
+    color: 'white'
 
+  },
+  palettes: {
+    boxSizing: 'border-box',
+    width: '100%',
+    display: 'grid',
+    gridTemplateColumns: 'repeat(3, 30%)',
+    gridGap: '5%'
+  }
+}
+
+class PaletteList extends Component {
 
   render() {
-    const list = this.props.palettes.map((palette) => (
-      <MiniPalette {...palette} />
-    ))
+    const { palettes, classes } = this.props;
+    
     return (
-      <div>
-        {list}
+      <div className={classes.root}>
+        <div className={classes.container}>
+          <nav className={classes.nav}>
+            <h1>React Colors</h1>
+          </nav>
+          <div className={classes.palettes}>
+            {palettes.map(palette => (
+              <MiniPalette {...palette} />
+            ))}
+          </div>
+
+        </div>
+    
+
       </div>
     )
   }
 }
 
-export default PaletteList
+export default withStyles(styles)(PaletteList)

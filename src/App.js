@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import seedColors from './seedColors'
 import Palette from './components/Palette';
-import PaetteList, { PaletteList } from './components/PaletteList';
+import PaletteList from './components/PaletteList';
 import { generatePalette } from './components/colorHelpers';
 
 function App() {
