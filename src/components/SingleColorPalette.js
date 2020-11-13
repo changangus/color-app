@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
-import ColorBox from './ColorBox'
+import Navbar from './Navbar';
+import PaletteFooter from './PaletteFooter';
+import ColorBox from './ColorBox';
 
 export class SingleColorPalette extends Component {
   constructor(props){
     super(props)
     this._shades = this.gatherShades(this.props.palette, this.props.colorId);
-    this.setState({
+    this.state({
+      format: 'hex'
+    });
+    this.changeFormat = this.changeFormat.bind(this);
+  }
 
+  changeFormat(val){
+    this.setState({
+      format: val
     })
   }
 
@@ -24,19 +33,24 @@ export class SingleColorPalette extends Component {
   }
 
   render() {
+    const { format } = this.state;
+    const { paletteName, emoji } = this.props.palette;
     const colorBoxes = this._shades.map(color => 
       <ColorBox 
         key={color.id} 
         name={color.name} 
-        background={color.hex}
+        background={color[format]}
         showLink={false} />)
     return (
       <div className='palette'>
+        <Navbar 
+          changeFormat={this.changeFormat}
+          sliderNeeded={false} />
         <h1>Single Color</h1>
         <div className="palette-colors">
           {colorBoxes}
         </div>
-        
+        < PaletteFooter paletteName={paletteName} emoji={emoji} />
       </div>
     )
   }
