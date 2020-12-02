@@ -42,7 +42,7 @@ export class SingleColorPalette extends Component {
         key={color[format]} 
         name={color.name} 
         background={color[format]}
-        showLink={false} />)
+        showingFullPalette={false} />)
     return (
       <div className='SingleColorPalette palette'>
         <Navbar 
