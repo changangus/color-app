@@ -1,12 +1,12 @@
-.palette{
+/* .palette{
   height: 100vh;
   display: flex;
   flex-direction: column;
-}
+} */
 
-.palette-colors {
+/* .palette-colors {
   height: 90%
-}
+} */
 
 .rc-slider-handle{
   background-color: teal;
