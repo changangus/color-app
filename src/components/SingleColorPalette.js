@@ -2,47 +2,9 @@ import React, { Component } from 'react';
 import Navbar from './Navbar';
 import PaletteFooter from './PaletteFooter';
 import ColorBox from './ColorBox';
-import './ColorBox.css';
+import styles from '../styles/PaletteStyles';
 import { withStyles } from '@material-ui/styles';
 import { Link } from 'react-router-dom';
-
-const styles = {
-  palette: {
-    height: '100vh',
-    display: 'flex',
-    flexDirection: 'column',
-  },
-  paletteColors: {
-    height: '92%',
-  },
-  goBack: {
-    width: '20%',
-    height: '50%',
-    margin: '0 auto',
-    display: 'inline-block',
-    position: 'relative',
-    cursor: 'pointer',
-    marginBottom: '-3.75px',
-    opacity: '1',
-    backgroundColor: 'black',
-    '& a': {
-      color: 'white',
-      width: '100px',
-      height: '30px',
-      position: 'absolute',
-      top: '50%',
-      left: '50%',
-      marginLeft: '-50px',
-      marginTop: '-15px',
-      textAlign: 'center',
-      outline: 'none',
-      background: 'rgba(255, 255, 255, 0.3)',
-      lineHeight: '30px',
-      border: 'none',
-      textDecoration: 'none',
-    }
-  }
-};
 
 export class SingleColorPalette extends Component {
   constructor(props){
