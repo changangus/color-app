@@ -15,10 +15,28 @@ export default {
   },
   nav: {
     display: 'flex',
-    widht: '100%',
+    width: '100%',
     justifyContent: 'space-between',
-    color: 'white'
-
+    alignItems: 'center',
+    color: 'black',
+    '& a': {
+      textDecoration: 'none',
+      color: 'white',
+      fontSize: '18px',
+      padding: '5px',
+      marginTop: '5px',
+      borderRadius: '5px',
+      backgroundColor: '#3498db',
+      opacity: '0.85',
+      transition: 'all 0.2s ease'
+    },
+    '&:hover a': {
+      opacity: '1',
+      cursor: 'pointer'
+    },
+    '&:active a': {
+      transform: 'scale(0.98)'
+    }
   },
   palettes: {
     boxSizing: 'border-box',
