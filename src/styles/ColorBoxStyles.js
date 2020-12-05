@@ -8,10 +8,10 @@ export default {
     margin: '0 auto',
     display: 'inline-block',
     position: 'relative',
-    cursor: 'pointer',
     marginBottom: '-3.75px',
     '&:hover button': {
-      opacity: 1
+      opacity: 1,
+      cursor: 'pointer'
     }
   },
   copyText: {
