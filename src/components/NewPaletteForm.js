@@ -19,6 +19,9 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
   },
+  addColorBtn: {
+    
+  },
   appBar: {
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.sharp,
@@ -76,6 +79,8 @@ export function NewPaletteForm() {
   const classes = useStyles();
   // const theme = useTheme();
   const [open, setOpen] = React.useState(false);
+  const [currentColor, setCurrentColor] = React.useState('teal');
+  const [colors, setColors] = React.useState(['purple', 'coral']);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -130,13 +135,23 @@ export function NewPaletteForm() {
           <Button variant='contained' color='secondary'>Clear Palette</Button>
         </div>
         <ChromePicker 
-          color='purple'
+          color={currentColor}
           onChange={() => {}}
           onChangeComplete={(newColor) => {
-            console.log(newColor)
+            console.log(newColor);
+            const { rgb } = newColor;
+            const { r, b, g, a } = rgb;
+            setCurrentColor(`rgba(${r}, ${g}, ${b}, ${a})`);
           }}
           />
-          <Button variant='contained' color='blue'>Add Color</Button>
+          <Button 
+            variant='contained' 
+            style={{backgroundColor: `${currentColor}`, transition: 'all 1.25s ease',}}
+            className='addColorBtn'
+            onClick={() => setColors([...colors, currentColor])}
+          >
+              Add Color
+          </Button>
       </Drawer>
       <main
         className={clsx(classes.content, {
@@ -144,6 +159,11 @@ export function NewPaletteForm() {
         })}
       >
         <div className={classes.drawerHeader} />
+        <ul>
+          {colors.map(color => (
+            <li style={{backgroundColor: `${color}`}}>{color}</li>
+          ))}
+        </ul>
       </main>
     </div>
   );
