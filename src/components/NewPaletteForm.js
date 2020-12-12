@@ -117,6 +117,11 @@ export function NewPaletteForm(props) {
     setColors([...colors, newColor])
     setColorName('');
   }
+
+  const removeColor = (colorName) => {
+    setColors(colors.filter(color => color.name !== colorName));
+  }
+
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -225,7 +230,12 @@ export function NewPaletteForm(props) {
       >
         <div className={classes.drawerHeader} />
         {colors.map(color => (
-          <DraggableColorBox color={color.color} name={color.name} />
+          <DraggableColorBox 
+            key={color.name}
+            color={color.color} 
+            name={color.name} 
+            handleClick={() => removeColor(color.name)}
+          />
         ))}
         
       </main>
