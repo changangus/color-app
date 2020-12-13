@@ -9,6 +9,7 @@ import 'rc-slider/assets/index.css';
 import styles from '../styles/NavBarStyles';
 import { withStyles } from '@material-ui/styles';
 import { IconButton } from '@material-ui/core';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 export class Navbar extends Component {
   constructor(props){
@@ -48,11 +49,13 @@ export class Navbar extends Component {
 
   render() {
     const { format, open } = this.state;
-    const { level, changeLevel, sliderNeeded, classes } = this.props;
+    const { level, changeLevel, sliderNeeded, paletteName, emoji, classes } = this.props;
     return (
       <nav className={classes.navbar}>
         <div className={classes.logo}>
-          <Link to='/'>ReactColors</Link>
+          <Link to='/'><ArrowBackIcon/></Link>
+          <h4>{paletteName}</h4>
+          <span>{emoji}</span>
         </div>
         {sliderNeeded && (
         <div>

@@ -84,7 +84,7 @@ export function NewPaletteForm(props) {
   // const theme = useTheme();
   const [open, setOpen] = React.useState(false);
   const [currentColor, setCurrentColor] = React.useState('teal');
-  const [colors, setColors] = React.useState([{name:'pink', color: 'pink'}]);
+  const [colors, setColors] = React.useState(props.palettes[0].colors);
   const [colorName, setColorName] = React.useState('');
   const [newPaletteName, setNewPaletteName] = React.useState('');
 
@@ -100,7 +100,7 @@ export function NewPaletteForm(props) {
     ValidatorForm.addValidationRule('isPaletteNameUnique', (value) => 
       props.palettes.every(({paletteName}) => paletteName.toLowerCase() !== value.toLowerCase())
     )
-  })
+  });
 
   const savePalette = () => {
     let newName = newPaletteName;
@@ -108,7 +108,7 @@ export function NewPaletteForm(props) {
     const newPalette = {paletteName: newName, colors: colors, id: id};
     props.savePalette(newPalette);
     props.history.push('/')
-  }
+  };
 
   const addNewColor = () => {
     const newColor = {
@@ -117,11 +117,11 @@ export function NewPaletteForm(props) {
     };
     setColors([...colors, newColor])
     setColorName('');
-  }
+  };
 
   const removeColor = (colorName) => {
     setColors(colors.filter(color => color.name !== colorName));
-  }
+  };
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -134,6 +134,17 @@ export function NewPaletteForm(props) {
   const onSortEnd = ({oldIndex, newIndex}) => {
     setColors(arrayMove(colors, oldIndex, newIndex));
   };
+
+  const clearColors = () => {
+    setColors([]);
+  };
+
+  const addRandomColor = () => {
+    const randomRGB = () => {
+     return Math.floor(Math.random() * 256)
+    };
+    setCurrentColor(`rgb(${randomRGB()}, ${randomRGB()}, ${randomRGB()})`);
+  }
 
   return (
     <div className={classes.root}>
@@ -194,8 +205,20 @@ export function NewPaletteForm(props) {
         <Divider />
         <Typography variant="h4">Design Your Palette!</Typography>
         <div>
-          <Button variant='contained' color='primary'>Random Color</Button>
-          <Button variant='contained' color='secondary'>Clear Palette</Button>
+          <Button 
+            variant='contained' 
+            color='primary'
+            onClick={addRandomColor}
+          >
+            Random Color
+          </Button>
+          <Button 
+            variant='contained' 
+            color='secondary' 
+            onClick={clearColors}
+          >
+            Clear Palette
+          </Button>
         </div>
         <ChromePicker 
           color={currentColor}

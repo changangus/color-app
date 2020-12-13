@@ -5,7 +5,7 @@ export default {
     flexDirection: 'column',
   },
   paletteColors: {
-    height: '92%',
+    height: '96%',
   },
   goBack: {
     width: '20%',

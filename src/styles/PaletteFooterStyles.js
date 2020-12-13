@@ -2,6 +2,7 @@ export default {
   paletteFooter: {
     backgroundColor: 'white',
     height: '4vh',
+    width: '100vw',
     display: 'flex',
     justifyContent: 'flex-end',
     alignItems: 'center',
