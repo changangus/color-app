@@ -24,6 +24,10 @@ export default {
       opacity: '1'
     }
   },
+  sliderText: {
+    fontSize: '16px',
+    fontStyle: 'italic'
+  },
   slider: {
     width: '340px',
     margin: '0 10px',

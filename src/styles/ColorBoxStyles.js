@@ -62,13 +62,13 @@ export default {
   copyOverlay: {
     opacity: '0',
     zIndex: '0',
+    transform: 'scale(8)',
     width: '100%',
     height: '100%',
-    // transition: 'transform 1.95s ease',
+    transition: 'all 0.35s ease',
   },
   showOverlay: {
     opacity: '1',
-    transform: 'scale(8)',
     zIndex: '1',
     position: 'fixed',
     overflow: 'hidden',
@@ -87,7 +87,7 @@ export default {
     transform: 'scale(0.1)',
     opacity: '0',
     color: 'white',
-    transition: 'all 0.35s ease',
+    transition: 'opacity 0.35s ease',
     '& h1': {
       fontWeight: '400',
       textShadow: '1px 2px 5px black',

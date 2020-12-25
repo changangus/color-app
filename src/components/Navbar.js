@@ -59,7 +59,7 @@ export class Navbar extends Component {
         </div>
         {sliderNeeded && (
         <div>
-          <span>Level: {level}</span>
+          <span className={classes.sliderText}>Level: {level}</span>
           <div className={classes.slider}>
             <Slider 
               defaultValue={level} 
