@@ -11,11 +11,12 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import DraggableColorList from '../components/DraggableColorList';
 import { arrayMove } from 'react-sortable-hoc';
 
-const drawerWidth = 340;
+const drawerWidth = 400;
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
+    width: '100%'
   },
   addColorBtn: {
     
@@ -29,6 +30,8 @@ const useStyles = makeStyles((theme) => ({
   },
   drawerPaper: {
     width: drawerWidth,
+    display: 'flex',
+    alignItems: 'center'
   },
   drawerHeader: {
     display: 'flex',
@@ -55,6 +58,15 @@ const useStyles = makeStyles((theme) => ({
     }),
     marginLeft: 0,
   },
+  container: {
+    width: '95%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100%',
+
+  }
 }));
 
 export function NewPaletteForm(props) {
@@ -119,13 +131,15 @@ export function NewPaletteForm(props) {
           </IconButton>
         </div>
         <Divider />
-        <Typography variant="h4">Design Your Palette!</Typography>
-        <ColorPickerForm 
-          setColors={setColors}
-          addNewColor={addNewColor}
-          clearColors={clearColors}
-          colors={colors}
-          />
+        <div className={classes.container}>
+          <Typography variant="h4" gutterBottom>Design Your Palette!</Typography>
+          <ColorPickerForm 
+            setColors={setColors}
+            addNewColor={addNewColor}
+            clearColors={clearColors}
+            colors={colors}
+            />
+        </div>
       </Drawer>
       <main
         className={clsx(classes.content, {

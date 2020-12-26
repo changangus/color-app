@@ -11,7 +11,7 @@ import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 
-const drawerWidth = 340;
+const drawerWidth = 400;
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
