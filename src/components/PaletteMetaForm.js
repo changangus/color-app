@@ -5,21 +5,12 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import {makeStyles} from '@material-ui/core/styles';
 import {Picker} from 'emoji-mart';
 import 'emoji-mart/css/emoji-mart.css';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 
-const useStyles = makeStyles({
-  emojiForm: {
-    display: 'flex',
-    flexDirection: 'column'
-  }
-})
-
 function PaletteMetaForm(props) {
-  const classes = useStyles();
-  const { submitNewPalette, palettes } = props;
+  const { submitNewPalette, palettes, classes } = props;
 
   const [openNameForm, setOpenNameForm] = useState(false);
   const [openEmojiForm, setOpenEmojiForm] = useState(false);
