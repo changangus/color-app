@@ -70,6 +70,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export function NewPaletteForm(props) {
+  const { savePalette, history} = props;
+
   const classes = useStyles();
   // const theme = useTheme();
   const [open, setOpen] = useState(false);
@@ -101,12 +103,12 @@ export function NewPaletteForm(props) {
     setColors([]);
   };
 
-  const savePalette = (newPaletteName) => {
+  const submitNewPalette = (newPaletteName) => {
     let newName = newPaletteName;
     let id = newName.toLowerCase().replace(/ /g, '-');
     const newPalette = {paletteName: newName, colors: colors, id: id};
-    props.savePalette(newPalette);
-    props.history.push('/')
+    savePalette(newPalette);
+    history.push('/')
   };
 
   return (
@@ -115,7 +117,7 @@ export function NewPaletteForm(props) {
         open={open}
         palettes={palettes}
         handleDrawerOpen={handleDrawerOpen}
-        savePalette={savePalette} />
+        submitNewPalette={submitNewPalette} />
       <Drawer
         className={classes.drawer}
         variant="persistent"
