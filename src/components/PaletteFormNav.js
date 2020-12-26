@@ -36,7 +36,15 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2),
   },
   navBtns: {
-
+    width: '25%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    marginRight: '1rem'
+  },
+  buttonLink: {
+    textDecoration: 'none',
+    marginRight: '1rem'
   }
 }))
 
@@ -66,21 +74,23 @@ function PaletteFormNav(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            Make a Palette
+            New Palette Form
           </Typography>
         </Toolbar>
         <div className={classes.navBtns}>
-            <PaletteMetaForm
-              submitNewPalette={submitNewPalette}
-              palettes={palettes}
-               />
-            <Link to="/">
+            <Link to="/" className={classes.buttonLink}>
               <Button 
                 variant="contained"
-                color="secondary">
+                color="secondary"
+                >
                   Go Back
-                </Button>
-              </Link>
+              </Button>
+            </Link>
+            <PaletteMetaForm
+              className={classes.button}
+              submitNewPalette={submitNewPalette}
+              palettes={palettes}
+            />
           </div>
       </AppBar>
     </div>

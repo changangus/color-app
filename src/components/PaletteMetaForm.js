@@ -30,41 +30,35 @@ function PaletteMetaForm(props) {
 
   return (
     <div>
-      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-        Open form dialog
+      <Button variant="contained" color="primary" onClick={handleClickOpen}>
+        Save Palette
       </Button>
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-        <DialogTitle id="form-dialog-title">Subscribe</DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-            To subscribe to this website, please enter your email address here. We will send updates
-            occasionally.
-          </DialogContentText>
-            <ValidatorForm onSubmit={() => submitNewPalette(newPaletteName)}>
+        <ValidatorForm onSubmit={() => submitNewPalette(newPaletteName)}>
+          <DialogTitle id="form-dialog-title"> Name your palette!</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              Please enter a name for your brand new palette. Your palette name must be unique! 
+            </DialogContentText>
               <TextValidator
+                fullWidth
+                margin='normal'
                 label="Palette Name" 
                 value={newPaletteName}
                 onChange={(evt) => {setNewPaletteName(evt.target.value)}}
                 validators={['required', 'isPaletteNameUnique']}
                 errorMessages={['Enter a palette name', 'Name is taken']}
                 />
-              <Button 
-                variant="contained"  
-                color="primary" 
-                type="submit"
-                >
-                  Save Palette
-              </Button>
-            </ValidatorForm>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose} color="primary">
-            Cancel
-          </Button>
-          <Button onClick={handleClose} color="primary">
-            Subscribe
-          </Button>
-        </DialogActions>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleClose} color="secondary">
+              Cancel
+            </Button>
+            <Button onClick={handleClose} color="primary" type="submit">
+              Submit Name
+            </Button>
+          </DialogActions>
+        </ValidatorForm>
       </Dialog>
     </div>
   );
