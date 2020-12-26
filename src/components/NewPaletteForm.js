@@ -103,10 +103,10 @@ export function NewPaletteForm(props) {
     setColors([]);
   };
 
-  const submitNewPalette = (newPaletteName) => {
+  const submitNewPalette = (newPaletteName, emoji) => {
     let newName = newPaletteName;
     let id = newName.toLowerCase().replace(/ /g, '-');
-    const newPalette = {paletteName: newName, colors: colors, id: id};
+    const newPalette = {paletteName: newName, colors: colors, id: id, emoji: emoji};
     savePalette(newPalette);
     history.push('/')
   };
