@@ -39,6 +39,9 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column'
   },
+  hide: {
+    display: 'none',
+  }
 }));
 
 export default useStyles;
