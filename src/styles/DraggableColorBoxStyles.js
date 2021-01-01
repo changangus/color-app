@@ -9,9 +9,12 @@ const useStyles = makeStyles({
     display: 'inline-block',
     position: 'relative',
     marginBottom: '-7px',
+    '& svg': {
+      opacity: '0.65'
+    },
     '&:hover svg': {
-      color: 'white',
-      transform: 'scale(1.25)'
+      opacity: '1',
+      transform: 'scale(1.25)',
     }
   },
   boxContent: {
@@ -20,7 +23,6 @@ const useStyles = makeStyles({
     bottom: '0px',
     left: '0px',
     padding: '5px',
-    color: 'black',
     letterSpacing: '1px',
     textTransform: 'uppercase',
     fontSize: '12px',

@@ -6,9 +6,10 @@ export default {
     padding: '0.5rem',
     position: 'relative',
     overflow: 'hidden',
-    '&:hover': {
-      cursor: 'pointer'
-    }
+    cursor: 'pointer',
+    '&:hover svg': {
+      opacity: '1'
+    },
   },
   colors: {
     backgroundColor: 'white',
@@ -38,5 +39,20 @@ export default {
   emoji: {
     marginLeft: '0.5rem',
     fontSize: '1.5rem'
+  },
+  delete: {
+    
+  },
+  deleteIcon: {
+    color: 'white',
+    backgroundColor: 'red',
+    width: '20px',
+    height: '20px',
+    position: 'absolute',
+    right: '0',
+    top: '0',
+    padding: '10px',
+    zIndex: '1',
+    opacity: '0',
   }
 }
