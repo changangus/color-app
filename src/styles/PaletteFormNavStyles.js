@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
+import sizes from './MediaQueries';
 
 const drawerWidth = 400;
 const useStyles = makeStyles((theme) => ({
@@ -29,11 +30,24 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'flex-end',
-    marginRight: '1rem'
+    marginRight: '1rem',
+    [sizes.down('sm')]: {
+      width: '20%',
+      marginRight: '0'
+    }
+  },
+  button: {
+    [sizes.down('sm')]:{
+      margin: '0',
+      fontSize: '9px',
+    }
   },
   buttonLink: {
     textDecoration: 'none',
-    marginRight: '1rem'
+    marginRight: '1rem',
+    [sizes.down('sm')]:{
+      margin: '0'
+    }
   },
   emojiForm: {
     display: 'flex',
@@ -41,6 +55,16 @@ const useStyles = makeStyles((theme) => ({
   },
   hide: {
     display: 'none',
+  },
+  header: {
+    [sizes.down('sm')]:{
+      fontSize: '14px',
+    }
+  },
+  icon: {
+    [sizes.down('sm')]:{
+      padding: '0 !important',
+    }
   }
 }));
 

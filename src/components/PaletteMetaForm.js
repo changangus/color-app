@@ -46,11 +46,11 @@ function PaletteMetaForm(props) {
 
   return (
     <div>
-      <Button variant="contained" color="primary" onClick={handleOpenNameForm}>
+      <Button variant="contained" color="primary" onClick={handleOpenNameForm} className={classes.button}>
         Save Palette
       </Button>
       <Dialog open={openNameForm} onClose={handleCloseNameForm} aria-labelledby="form-dialog-title">
-        <ValidatorForm>
+        <ValidatorForm onSubmit={handleSubmitNameForm}>
           <DialogTitle id="form-dialog-title">Name your palette!</DialogTitle>
           <DialogContent>
             <DialogContentText>
@@ -70,7 +70,7 @@ function PaletteMetaForm(props) {
             <Button onClick={handleCloseNameForm} color="secondary">
               Cancel
             </Button>
-            <Button onClick={handleSubmitNameForm} color="primary">
+            <Button type='submit' color="primary">
               Submit Name
             </Button>
           </DialogActions>

@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
+import sizes from './MediaQueries';
 
 const useStyles = makeStyles({
   root: {
@@ -15,6 +16,18 @@ const useStyles = makeStyles({
     '&:hover svg': {
       opacity: '1',
       transform: 'scale(1.25)',
+    },
+    [sizes.down('lg')]: {
+      width: '25%',
+      height: '20%'
+    },
+    [sizes.down('md')]: {
+      width: '50%',
+      height: '15%'
+    },
+    [sizes.down('sm')]: {
+      width: '100%',
+      height: '10%'
     }
   },
   boxContent: {

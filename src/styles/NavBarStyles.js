@@ -1,3 +1,5 @@
+import sizes from './MediaQueries';
+
 export default {
   navbar: {
     display: 'flex',
@@ -22,6 +24,9 @@ export default {
     },
     '&:hover a': {
       opacity: '1'
+    },
+    [sizes.down('xs')]: {
+      display: 'none'
     }
   },
   sliderText: {
@@ -32,6 +37,9 @@ export default {
     width: '340px',
     margin: '0 10px',
     display: 'inline-block',
+    [sizes.down('md')]: {
+      width: '150px'
+    }
   },
   selectContainer: {
     marginLeft: 'auto',

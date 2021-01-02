@@ -1,14 +1,13 @@
 import { makeStyles } from '@material-ui/core/styles';
+import sizes from './MediaQueries';
 
 const drawerWidth = 400;
+const mediaQuerieDrawer = 250;
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
-    width: '100%'
-  },
-  addColorBtn: {
-    
+    width: '100%',
   },
   hide: {
     display: 'none',
@@ -16,11 +15,17 @@ const useStyles = makeStyles((theme) => ({
   drawer: {
     width: drawerWidth,
     flexShrink: 0,
+    [sizes.down('md')]: {
+      width: mediaQuerieDrawer,
+    }
   },
   drawerPaper: {
     width: drawerWidth,
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    [sizes.down('md')]: {
+      width: mediaQuerieDrawer,
+    }
   },
   drawerHeader: {
     display: 'flex',
@@ -40,6 +45,9 @@ const useStyles = makeStyles((theme) => ({
       duration: theme.transitions.duration.leavingScreen,
     }),
     marginLeft: -drawerWidth,
+    [sizes.down('md')]: {
+      marginLeft: -mediaQuerieDrawer,
+    }
   },
   contentShift: {
     transition: theme.transitions.create('margin', {

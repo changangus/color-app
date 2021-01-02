@@ -37,7 +37,7 @@ function PaletteFormNav(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap>
+          <Typography variant="h6" noWrap className={classes.header}>
             New Palette Form
           </Typography>
         </Toolbar>
@@ -46,12 +46,12 @@ function PaletteFormNav(props) {
               <Button 
                 variant="contained"
                 color="secondary"
+                className={classes.button}
                 >
                   Go Back
               </Button>
             </Link>
             <PaletteMetaForm
-              className={classes.button}
               submitNewPalette={submitNewPalette}
               palettes={palettes}
               classes={classes}
