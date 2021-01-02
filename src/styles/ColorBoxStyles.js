@@ -15,10 +15,11 @@ export default {
     },
     [sizes.down('lg')]: {
       width: '25%',
-      height: props => props.showingFullPalette ? '20%' : '25%',
+      height: props => props.showingFullPalette ? '20%' : '33.3333%',
     },
     [sizes.down('md')]: {
-      width: '50%'
+      width: '50%',
+      height: props => props.showingFullPalette ? '10%' : '20%',
     },
     [sizes.down('xs')]: {
       width: '100%',
@@ -106,6 +107,9 @@ export default {
       background: 'rgba(255, 255, 255, 0.2)',
       width: '95%',
       padding: '1rem',
+      [sizes.down('xs')]: {
+        fontSize: '5rem',
+      }
     }
   },
   showCopyMessage: {

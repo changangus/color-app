@@ -1,3 +1,5 @@
+import sizes from './MediaQueries';
+
 export default {
   palette: {
     height: '100vh',
@@ -32,6 +34,19 @@ export default {
       lineHeight: '30px',
       border: 'none',
       textDecoration: 'none',
-    }
+    },
+    [sizes.down('lg')]: {
+      width: '25%',
+      height: '33.3333%'
+    },
+    [sizes.down('sm')]: {
+      width: '50%',
+      height: '20%'
+    },
+    [sizes.down('xs')]: {
+      height: '15%',
+      width: '100%'
+    },
+
   }
 };
