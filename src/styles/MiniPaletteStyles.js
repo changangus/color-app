@@ -40,9 +40,6 @@ export default {
     marginLeft: '0.5rem',
     fontSize: '1.5rem'
   },
-  delete: {
-    
-  },
   deleteIcon: {
     color: 'white',
     backgroundColor: 'red',
@@ -54,5 +51,6 @@ export default {
     padding: '10px',
     zIndex: '1',
     opacity: '0',
+    borderRadius: '4px'
   }
 }
