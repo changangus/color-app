@@ -32,9 +32,6 @@ function App() {
   
   return (
     <Switch>
-      <Route exact path='/' 
-        render={(routeProps) => <PaletteList palettes={palettes} deletePalette={deletePalette} {...routeProps} />}
-        />
       <Route exact path='/palette/new' 
         render={(routeProps) => 
           <NewPaletteForm 
@@ -42,7 +39,9 @@ function App() {
             palettes={palettes}
             {...routeProps} 
             />
-        }/>  
+        }/>
+      <Route exact path='/' 
+        render={(routeProps) => <PaletteList palettes={palettes} deletePalette={deletePalette} {...routeProps} />}/>
       <Route exact path='/palette/:id' 
         render={(routeProps) => 
           <Palette 
