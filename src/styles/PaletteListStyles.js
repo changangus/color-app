@@ -1,12 +1,16 @@
 import sizes from './MediaQueries';
+import background from './bg.svg';
 
 export default {
   root: {
-    backgroundColor: 'white smoke',
+    backgroundColor: '#f6f6f6',
+    backgroundImage: `url(${background})`,
+    backgroundRepeat: 'repeat',
     height: '100vh',
     display: 'flex',
     alignItems: 'flex-start',
     justifyContent: 'center',
+    overflow: 'scroll'
   },
   container: {
     width: '50%',
@@ -59,5 +63,8 @@ export default {
       gridTemplateColumns: 'repeat(1, 100%)',
       gridGap: '2%'
     }
+  },
+  header: {
+    fontSize: '2rem'
   }
 }
