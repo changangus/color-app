@@ -12,12 +12,12 @@ import DraggableColorList from '../components/DraggableColorList';
 import { arrayMove } from 'react-sortable-hoc';
 
 export function NewPaletteForm(props) {
-  const { savePalette, history} = props;
+  const { savePalette, history } = props;
 
   const classes = useStyles();
   // const theme = useTheme();
-  const [open, setOpen] = useState(false);
-  const [colors, setColors] = useState(props.palettes[0].colors);
+  const [open, setOpen] = useState(true);
+  const [colors, setColors] = useState([]);
 
   const { palettes } = props;
 
