@@ -54,7 +54,7 @@ export class Navbar extends Component {
       <nav className={classes.navbar}>
         <div className={classes.logo}>
           <Link to='/'><ArrowBackIcon/></Link>
-          <h4>{paletteName}</h4>
+          <h4 className={classes.paletteNameHeader}>{paletteName}</h4>
           <span>{emoji}</span>
         </div>
         {sliderNeeded && (

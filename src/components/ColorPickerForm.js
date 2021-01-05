@@ -68,7 +68,10 @@ function ColorPickerForm(props) {
           setCurrentColor(`rgba(${r}, ${g}, ${b}, ${a})`);
         }}
       />
-      <ValidatorForm onSubmit={handleSubmit} >
+      <ValidatorForm 
+        onSubmit={handleSubmit}
+        instantValidate={false} 
+        >
         <TextValidator 
           className={classes.colorNameInput}
           value={colorName}

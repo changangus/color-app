@@ -8,6 +8,12 @@ export default {
     justifyContent: 'space-between',
     backgroundColor: 'white'
   },
+  paletteNameHeader: {
+    [sizes.down('md')]: {
+      fontSize: '13px',
+      fontWeight: 'bold'
+    }
+  },
   logo: {
     backgroundColor: 'rgb(218, 218, 218)',
     width: '15%',
