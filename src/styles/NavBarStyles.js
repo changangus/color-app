@@ -5,7 +5,8 @@ export default {
     display: 'flex',
     height: '6%',
     alignItems: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    backgroundColor: 'white'
   },
   logo: {
     backgroundColor: 'rgb(218, 218, 218)',

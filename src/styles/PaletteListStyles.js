@@ -1,5 +1,4 @@
 import sizes from './MediaQueries';
-import background from './bg.svg';
 
 export default {
   "@global": {
@@ -12,8 +11,6 @@ export default {
     }
   },
   root: {
-    backgroundColor: '#f6f6f6',
-    backgroundImage: `url(${background})`,
     backgroundRepeat: 'repeat',
     height: '100vh',
     display: 'flex',
@@ -49,7 +46,7 @@ export default {
       borderRadius: '5px',
       backgroundColor: '#3498db',
       opacity: '0.85',
-      transition: 'all 0.2s ease'
+      transition: 'all 0.2s ease',
     },
     '&:hover a': {
       opacity: '1',
@@ -64,13 +61,13 @@ export default {
     width: '100%',
     display: 'grid',
     gridTemplateColumns: 'repeat(3, 30%)',
-    gridGap: '5%',
+    gridGap: '3rem',
     [sizes.down('sm')]: {
       gridTemplateColumns: 'repeat(2, 50%)'
     },
     [sizes.down('xs')]: {
       gridTemplateColumns: 'repeat(1, 100%)',
-      gridGap: '2%'
+      gridGap: '1rem'
     }
   },
   header: {
