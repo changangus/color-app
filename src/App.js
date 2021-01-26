@@ -65,8 +65,8 @@ function App() {
                 transition={{duration: 1}}
               >
                 <Palette 
-                  palette={generatePalette(findPalette(routeProps.match.params.id)
-                )}/>
+                  palette={generatePalette(findPalette(routeProps.match.params.id))}
+                />
               </motion.div>
             }/> 
           <Route exact path='/palette/:paletteId/:colorId'         
@@ -82,7 +82,7 @@ function App() {
                   palette={generatePalette(findPalette(routeProps.match.params.paletteId)
                 )}/>
               </motion.div>
-            } />
+            } /> 
         </Switch>
       </AnimatePresence>
     </div>
