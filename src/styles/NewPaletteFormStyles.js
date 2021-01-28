@@ -8,6 +8,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
     width: '100%',
+    height: '100vh'
   },
   hide: {
     display: 'none',
@@ -63,7 +64,6 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     height: '100%',
-
   }
 }));
 
