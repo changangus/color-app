@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Slider from 'rc-slider';
 import Select from '@material-ui/core/Select';
@@ -11,46 +11,30 @@ import { withStyles } from '@material-ui/styles';
 import { IconButton } from '@material-ui/core';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
-export class Navbar extends Component {
-  constructor(props){
-    super(props);
-    this.state ={
-      format: 'hex',
-      open: false,
-    }
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSnackBar = this.handleSnackBar.bind(this);
-    this.closeSnackBar = this.closeSnackBar.bind(this);
+function Navbar(props){
+  const [format, setFormat] = useState('hex');
+  const [open, setOpen] = useState(false);
+
+  function handleChange(e){
+    setFormat(e.target.value)
+    props.changeFormat(e.target.value);
+    handleSnackBar();
   }
 
-  handleChange(e){
-    this.setState({
-      format: e.target.value,
-    })
-    this.props.changeFormat(e.target.value);
-    this.handleSnackBar();
+  function handleSnackBar(){
+    setOpen(true);
   }
 
-  handleSnackBar(){
-    this.setState({
-      open: true
-    })
-  }
-
-  closeSnackBar(event, reason){
+  function closeSnackBar(event, reason){
     if (reason === 'clickaway') {
       return;
-    }
-
-    this.setState({
-      open: false
-    })
+    };
+    setOpen(false);
   };
 
-  render() {
-    const { format, open } = this.state;
-    const { level, changeLevel, sliderNeeded, paletteName, emoji, classes } = this.props;
-    return (
+    
+  const { level, changeLevel, sliderNeeded, paletteName, emoji, classes } = props;
+  return (
       <nav className={classes.navbar}>
         <div className={classes.logo}>
           <Link to='/'><ArrowBackIcon/></Link>
@@ -72,7 +56,7 @@ export class Navbar extends Component {
         </div>
         )}
         <div className={classes.selectContainer}>
-          <Select value={format} onChange={this.handleChange}>
+          <Select value={format} onChange={handleChange}>
             <MenuItem value='hex'>HEX - #000000</MenuItem>
             <MenuItem value='rgb'>RGB - rgb(0, 0, 0)</MenuItem>
             <MenuItem value='rgba'>RGBA - rgba(0, 0, 0, 1.0)</MenuItem>
@@ -84,7 +68,7 @@ export class Navbar extends Component {
             horizontal: 'left',
           }}
           open={open}
-          onClose={this.closeSnackBar}
+          onClose={closeSnackBar}
           autoHideDuration={3000}
           message={<span id='message-id'>Format Changed to {format.toUpperCase()}.</span>}
           ContentProps={{
@@ -92,7 +76,7 @@ export class Navbar extends Component {
           }}
           action={
             <React.Fragment>
-              <IconButton size="small" aria-label="close" color="inherit" onClick={this.closeSnackBar}>
+              <IconButton size="small" aria-label="close" color="inherit" onClick={closeSnackBar}>
                 <CloseIcon fontSize="small"  />
               </IconButton>
             </React.Fragment>
@@ -100,7 +84,6 @@ export class Navbar extends Component {
       />
       </nav>
     )
-  }
 }
 
 export default withStyles(styles)(Navbar)
